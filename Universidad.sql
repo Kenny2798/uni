@@ -111,15 +111,6 @@ INSERT INTO curso VALUES(6, 'Doctorado', 6);
 -- Solicitamos el directorio donde donde alojar los archivos que querramos importar
  SELECT @@GLOBAL.secure_file_priv;
 
-/*Importamos el archivo alumnos.txt en la tabla alumno estableciendo ";" como separador
-entre campos y "\n", significa salto de linea, para definir que cada 
-registro acaba al haber salto de linea*/
-LOAD DATA LOCAL INFILE '/ruta/a/tu/archivo/alumnos.txt'
-INTO TABLE alumno
-FIELDS TERMINATED BY ';'
-LINES TERMINATED BY '\n'
-IGNORE 1 LINES;
-
     -- Carga con inserción manual de datos profesor
 INSERT INTO profesor VALUES('PR001','34417139B','Juan','Infante','Fraidias','juan.infante.fraidias@ucm.com','Calle de los Almendros , 86',28070,'Las Rozas','Madrid','Asociados');
 INSERT INTO profesor VALUES('PR002','52479077P','David','Serna','Balmori','david.serna.balmori@ucm.com','Calle Abarejo , 44',28017,'Brea de Tajo','Madrid','Titulares Universidad');
